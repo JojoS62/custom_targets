@@ -1,5 +1,5 @@
-    {
-        "STM32F407VE_BLACK": {
+{
+    "STM32F407VE_BLACK": {
         "inherits": ["FAMILY_STM32"],
         "core": "Cortex-M4F",
         "extra_labels_add": [
@@ -28,11 +28,15 @@
             "TRNG", 
             "FLASH",
             "EMAC",
-			"SDIO",
+            "SDIO",
             "USBDEVICE"
         ],
         "components_add": ["SDIO", "SPIF"],
         "release_versions": ["2", "5"],
         "device_name": "STM32F407VE"
+    },
+    "BLUEPILL_F103RB": {
+        "inherits": ["BLUEPILL_F103C8"]
     }
 }
+
