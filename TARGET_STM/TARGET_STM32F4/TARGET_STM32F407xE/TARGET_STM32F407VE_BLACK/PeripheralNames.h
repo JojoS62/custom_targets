@@ -83,6 +83,12 @@ typedef enum {
     PWM_14 = (int)TIM14_BASE
 } PWMName;
 
+typedef enum {
+    USB_FS = (int)USB_OTG_FS_PERIPH_BASE,
+    USB_HS = (int)USB_OTG_HS_PERIPH_BASE
+} USBName;
+
+
 #ifdef __cplusplus
 }
 #endif
