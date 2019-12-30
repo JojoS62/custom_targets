@@ -53,7 +53,8 @@
             "SERIAL_ASYNCH",
             "FLASH"
         ],
-        "device_has_remove": ["STDIO_MESSAGES", "LPTICKER"]
+        "device_has_remove": ["STDIO_MESSAGES", "LPTICKER"],
+        "default_lib": "small"
     }
 }
 
