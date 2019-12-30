@@ -35,8 +35,25 @@
         "release_versions": ["2", "5"],
         "device_name": "STM32F407VE"
     },
-    "BLUEPILL_F103RB": {
-        "inherits": ["BLUEPILL_F103C8"]
+        "BLUEPILL_F103RB": {
+        "inherits": ["FAMILY_STM32"],
+        "core": "Cortex-M3",
+        "default_toolchain": "GCC_ARM",
+        "extra_labels_add": ["STM32F1", "STM32F103RB"],
+        "config": {
+            "clock_source": {
+                "help": "Mask value : USE_PLL_HSE_EXTC (SYSCLK=72 MHz) | USE_PLL_HSE_XTAL (need HW patch) | USE_PLL_HSI (SYSCLK=64 MHz)",
+                "value": "USE_PLL_HSE_EXTC|USE_PLL_HSI",
+                "macro_name": "CLOCK_SOURCE"
+            }
+        },
+        "supported_toolchains": ["GCC_ARM"],
+        "device_has_add": [
+            "CAN",
+            "SERIAL_ASYNCH",
+            "FLASH"
+        ],
+        "device_has_remove": ["STDIO_MESSAGES", "LPTICKER"]
     }
 }
 
