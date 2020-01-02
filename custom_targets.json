@@ -54,6 +54,27 @@
             "FLASH"
         ],
         "device_has_remove": ["STDIO_MESSAGES", "LPTICKER"]
+    },
+    "BLACKPILL_F411CE": {
+        "inherits": ["FAMILY_STM32"],
+        "core": "Cortex-M4F",
+        "extra_labels_add": ["STM32F4", "STM32F411xE", "STM32F411RE"],
+        "components_add": ["FLASHIAP"],
+        "config": {
+            "clock_source": {
+                "help": "Mask value : USE_PLL_HSE_EXTC | USE_PLL_HSE_XTAL (need HW patch) | USE_PLL_HSI",
+                "value": "USE_PLL_HSE_XTAL|USE_PLL_HSI",
+                "macro_name": "CLOCK_SOURCE"
+            }
+        },
+        "device_has_add": [
+            "SERIAL_ASYNCH",
+            "FLASH",
+            "MPU"
+        ],
+        "release_versions": ["2", "5"],
+        "device_name": "STM32F411CE",
+        "bootloader_supported": true
     }
 }
 
