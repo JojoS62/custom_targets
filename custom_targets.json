@@ -65,6 +65,10 @@
                 "help": "Mask value : USE_PLL_HSE_EXTC | USE_PLL_HSE_XTAL | USE_PLL_HSI",
                 "value": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
                 "macro_name": "CLOCK_SOURCE"
+            },
+            "hse_value": {
+                "value": "25000000",
+                "macro_name": "HSE_VALUE"
             }
         },
         "device_has_add": [
@@ -74,7 +78,7 @@
         ],
         "release_versions": ["2", "5"],
         "device_name": "STM32F411CE",
-        "bootloader_supported": true
+        "device_has_remove": ["LPTICKER"]
     }
 }
 
