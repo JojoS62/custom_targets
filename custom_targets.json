@@ -59,7 +59,7 @@
         "inherits": ["FAMILY_STM32"],
         "core": "Cortex-M4F",
         "extra_labels_add": ["STM32F4", "STM32F411xE", "STM32F411RE"],
-        "components_add": ["FLASHIAP"],
+        "components_add": ["FLASHIAP", "SPIF"],
         "config": {
             "clock_source": {
                 "help": "Mask value : USE_PLL_HSE_EXTC | USE_PLL_HSE_XTAL | USE_PLL_HSI",
