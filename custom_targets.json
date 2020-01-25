@@ -114,7 +114,7 @@
         ],
         "components_add": ["SDIO", "SPIF"],
         "release_versions": ["2", "5"],
-        "device_name": "STM32F407VE"
+        "device_name": "STM32F407VG"
     }
 }
 
