@@ -209,8 +209,8 @@ typedef enum {
 #endif
 
     // Generic signals namings
-    LED1        = PA_1,  // D2 red
-    LED2        = PA_1,  // D3 
+    LED1        = PA_1,  // D2 red   also  ETH_REF_CLK
+    LED2        = LED1,  // D3 
     LED_RED     = LED1,
     LED_D2      = LED1,  // symbol for LED marked 'D2'
     LED_D3      = LED2,  // symbol for LED marked 'D3'
@@ -227,9 +227,17 @@ typedef enum {
     SPI_MOSI    = PA_7,
     SPI_MISO    = PA_6,
     SPI_SCK     = PA_5,
-    SPI_CS      = PB_6,
-    PWM_OUT     = PB_3,
-    SPI3_MOSI    = PB_5,
+    SPI_CS      = PA_4,
+    PWM_OUT     = PB_0,
+    SPI2A_MOSI    = PB_15,      // SPI2A colides with Ethernet
+    SPI2A_MISO    = PB_14,
+    SPI2A_SCK     = PB_13,      // ETH_TXD1
+    SPI2A_CS      = PB_12,      // ETH_TXD0
+    SPI2B_MOSI    = PC_3,
+    SPI2B_MISO    = PC_2,
+    SPI2B_SCK     = PB_10,      // ETH_RX_ER (not used)
+    SPI2B_CS      = PB_9,
+    SPI3_MOSI    = PB_5,        // SPI Flash EEprom
     SPI3_MISO    = PB_4,
     SPI3_SCK     = PB_3,
     SPI3_CS      = PA_15,
@@ -272,7 +280,7 @@ typedef enum {
     //ETH_RXD3 = PB_1,
     //ETH_RX_CLK = PA_1,
     //ETH_RX_DV = PA_7,
-    ETH_RX_ER = PB_10,
+    //ETH_RX_ER = PB_10,
     ETH_TXD0 = PB_12,
     ETH_TXD1 = PB_13,
     //ETH_TXD2 = PC_2,
