@@ -229,18 +229,23 @@ typedef enum {
     SPI_SCK     = PA_5,
     SPI_CS      = PA_4,
     PWM_OUT     = PB_0,
-    SPI2A_MOSI    = PB_15,      // SPI2A colides with Ethernet
-    SPI2A_MISO    = PB_14,
-    SPI2A_SCK     = PB_13,      // ETH_TXD1
-    SPI2A_CS      = PB_12,      // ETH_TXD0
-    SPI2B_MOSI    = PC_3,
-    SPI2B_MISO    = PC_2,
-    SPI2B_SCK     = PB_10,      // ETH_RX_ER (not used)
-    SPI2B_CS      = PB_9,
-    SPI3_MOSI    = PB_5,        // SPI Flash EEprom
-    SPI3_MISO    = PB_4,
-    SPI3_SCK     = PB_3,
-    SPI3_CS      = PA_15,
+    SPI2A_MOSI  = PB_15,      // SPI2A colides with Ethernet
+    SPI2A_MISO  = PB_14,
+    SPI2A_SCK   = PB_13,      // ETH_TXD1
+    SPI2A_CS    = PB_12,      // ETH_TXD0
+    SPI2B_MOSI  = PC_3,
+    SPI2B_MISO  = PC_2,
+    SPI2B_SCK   = PB_10,      // ETH_RX_ER (not used)
+    SPI2B_CS    = PB_9,
+    SPI3_MOSI   = PB_5,        // SPI Flash EEprom
+    SPI3_MISO   = PB_4,
+    SPI3_SCK    = PB_3,
+    SPI3_CS     = PA_15,
+
+    FLASH_MOSI  = SPI3_MOSI,
+    FLASH_MISO  = SPI3_MISO,
+    FLASH_CLK   = SPI3_SCK,
+    FLASH_CS    = SPI3_CS,
 
     //USB pins
     // USB_OTG_HS_ULPI_D0 = PA_3,
