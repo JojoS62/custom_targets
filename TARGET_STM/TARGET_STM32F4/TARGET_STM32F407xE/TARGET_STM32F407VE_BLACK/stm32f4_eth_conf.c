@@ -56,13 +56,5 @@ void _eth_config_mac(ETH_HandleTypeDef *heth)
         macconf.ChecksumOffload = ETH_CHECKSUMOFFLAOD_DISABLE;
     }
 
-    //
-    // override defaults
-    // workaround because HAL does not handle autonegotiation correct
-    //
-    heth->Init.AutoNegotiation = ETH_AUTONEGOTIATION_DISABLE;
-    heth->Init.Speed = ETH_SPEED_100M;
-    heth->Init.DuplexMode = ETH_MODE_FULLDUPLEX;
-
     (void) HAL_ETH_ConfigMAC(heth, &macconf);
 }
