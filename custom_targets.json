@@ -35,11 +35,11 @@
         "release_versions": ["2", "5"],
         "device_name": "STM32F407VE"
     },
-        "BLUEPILL_F103RB": {
+        "BLUEPILL_F103CB": {
         "inherits": ["FAMILY_STM32"],
         "core": "Cortex-M3",
         "default_toolchain": "GCC_ARM",
-        "extra_labels_add": ["STM32F1", "STM32F103RB"],
+        "extra_labels_add": ["STM32F1", "STM32F103CB"],
         "config": {
             "clock_source": {
                 "help": "Mask value : USE_PLL_HSE_EXTC (SYSCLK=72 MHz) | USE_PLL_HSE_XTAL (need HW patch) | USE_PLL_HSI (SYSCLK=64 MHz)",
