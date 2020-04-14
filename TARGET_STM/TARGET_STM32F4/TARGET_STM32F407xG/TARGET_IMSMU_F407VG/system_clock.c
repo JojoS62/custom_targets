@@ -157,7 +157,7 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     RCC_OscInitStruct.PLL.PLLState        = RCC_PLL_ON;
     RCC_OscInitStruct.PLL.PLLSource       = RCC_PLLSOURCE_HSE;
     RCC_OscInitStruct.PLL.PLLM            = 25;             // VCO input clock = 1 MHz (25 MHz / 8)
-    RCC_OscInitStruct.PLL.PLLN            = 200;           // VCO output clock = 336 MHz (1 MHz * 336)
+    RCC_OscInitStruct.PLL.PLLN            = 336;            // VCO output clock = 336 MHz (1 MHz * 336)
     RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2; // PLLCLK = 168 MHz (336 MHz / 2)
     RCC_OscInitStruct.PLL.PLLQ            = 4;             // USB clock = 48 MHz (336 MHz / 7) --> OK for USB
     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
@@ -168,19 +168,17 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     RCC_ClkInitStruct.ClockType      = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
     RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK; // 168 MHz
     RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1; // 168 MHz
-    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;   // 42 MHz
-    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;   // 84 MHz (SPI1 clock...)
-    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK) {
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;   // 42 MHz
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;   // 84 MHz (SPI1 clock...)
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK) {
         return 0; // FAIL
     }
 
     /* Output clock on MCO1 pin(PA8) for debugging purpose */
-    /*
     if (bypass == 0)
       HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_2); // 4 MHz
     else
-      HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_1); // 8 MHz
-    */
+      HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_1); // 25 MHz
 
     return 1; // OK
 }
