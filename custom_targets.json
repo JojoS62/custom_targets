@@ -1,6 +1,6 @@
 {
     "STM32F407VE_BLACK": {
-        "inherits": ["FAMILY_STM32"],
+        "inherits": ["MCU_STM32"],
         "core": "Cortex-M4F",
         "extra_labels_add": [
             "STM32F4",
@@ -38,7 +38,7 @@
         "device_name": "STM32F407VE"
     },
         "BLUEPILL_F103CB": {
-        "inherits": ["FAMILY_STM32"],
+        "inherits": ["MCU_STM32"],
         "core": "Cortex-M3",
         "default_toolchain": "GCC_ARM",
         "extra_labels_add": ["STM32F1", "STM32F103CB"],
@@ -58,7 +58,7 @@
         "device_has_remove": ["STDIO_MESSAGES", "LPTICKER"]
     },
     "WEACT_F411CE": {
-        "inherits": ["FAMILY_STM32"],
+        "inherits": ["MCU_STM32"],
         "core": "Cortex-M4F",
         "macros_add": [
             "STM32F411xE"
@@ -90,7 +90,7 @@
         "device_has_remove": ["LPTICKER"]
     },
     "DEVEBOX_F407VG": {
-        "inherits": ["FAMILY_STM32"],
+        "inherits": ["MCU_STM32"],
         "core": "Cortex-M4F",
         "extra_labels_add": [
             "STM32F4",
@@ -128,7 +128,7 @@
         "device_name": "STM32F407VG"
     },
     "IMSMU_F407VG": {
-        "inherits": ["FAMILY_STM32"],
+        "inherits": ["MCU_STM32"],
         "core": "Cortex-M4F",
         "extra_labels_add": [
             "STM32F4",
