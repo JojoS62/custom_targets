@@ -43,7 +43,7 @@
                                    This value must be a multiple of 0x200. */
 
 /* Select the clock sources (other than HSI) to start with (0=OFF, 1=ON) */
-#define USE_PLL_HSE_EXTC (1) /* Use external clock */
+#define USE_PLL_HSE_EXTC (0) /* Use external clock */
 #define USE_PLL_HSE_XTAL (1) /* Use external xtal */
 
 
@@ -174,13 +174,13 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
         return 0; // FAIL
     }
 
+#if 0
     /* Output clock on MCO1 pin(PA8) for debugging purpose */
-    /*
     if (bypass == 0)
       HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_2); // 4 MHz
     else
       HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_1); // 8 MHz
-    */
+#endif
 
     return 1; // OK
 }

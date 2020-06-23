@@ -35,7 +35,7 @@
         ],
         "components_add": ["SDIO", "SPIF"],
         "release_versions": ["2", "5"],
-        "device_name": "STM32F407VE"
+        "device_name": "STM32F407VETx"
     },
         "BLUEPILL_F103CB": {
         "inherits": ["MCU_STM32"],
@@ -171,7 +171,7 @@
     },
     "IMSLA_F746VG": {
         "inherits": [
-            "FAMILY_STM32"
+            "MCU_STM32"
         ],
         "core": "Cortex-M7F",
         "extra_labels_add": [
