@@ -226,6 +226,55 @@
             "lpticker_delay_ticks": 0,
             "network-default-interface-type": "ETHERNET"
         }
+    },
+    "LPC812": {
+        "supported_form_factors": ["ARDUINO"],
+        "core": "Cortex-M0+",
+        "default_toolchain": "uARM",
+        "extra_labels": ["NXP", "LPC81X"],
+        "is_disk_virtual": true,
+        "supported_toolchains": ["uARM", "IAR", "GCC_ARM"],
+        "inherits": ["LPCTarget"],
+        "detect_code": ["1050"],
+        "device_has": [
+            "I2C",
+            "I2CSLAVE",
+            "INTERRUPTIN",
+            "PWMOUT",
+            "SERIAL",
+            "SERIAL_FC",
+            "SLEEP",
+            "SPI",
+            "SPISLAVE",
+            "USTICKER"
+        ],
+        "c_lib": "small",
+        "release_versions": ["2"],
+        "device_name": "LPC812M101JDH20"
+    },
+    "LPC824": {
+        "supported_form_factors": ["ARDUINO"],
+        "core": "Cortex-M0+",
+        "default_toolchain": "uARM",
+        "extra_labels": ["NXP", "LPC82X"],
+        "is_disk_virtual": true,
+        "supported_toolchains": ["uARM", "GCC_ARM", "IAR"],
+        "inherits": ["LPCTarget"],
+        "device_has": [
+            "ANALOGIN",
+            "I2C",
+            "I2CSLAVE",
+            "INTERRUPTIN",
+            "PWMOUT",
+            "SERIAL",
+            "SLEEP",
+            "SPI",
+            "SPISLAVE",
+            "USTICKER"
+        ],
+        "c_lib": "small",
+        "release_versions": ["2"],
+        "device_name": "LPC824M201JDH20"
     }
 }
 
