@@ -9,7 +9,7 @@
         "macros_add": [
             "STM32F407xx"
         ],
-        "supported_toolchains": ["ARM", "uARM", "GCC_ARM", "IAR"],
+        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "config": {
             "clock_source": {
                 "help": "Mask value : USE_PLL_HSE_EXTC (need HW patch) | USE_PLL_HSE_XTAL | USE_PLL_HSI",
@@ -99,7 +99,7 @@
         "macros_add": [
             "STM32F407xx"
         ],
-        "supported_toolchains": ["ARM", "uARM", "GCC_ARM", "IAR"],
+        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "config": {
             "clock_source": {
                 "help": "Mask value : USE_PLL_HSE_EXTC (need HW patch) | USE_PLL_HSE_XTAL | USE_PLL_HSI",
@@ -137,7 +137,7 @@
         "macros_add": [
             "STM32F407xx"
         ],
-        "supported_toolchains": ["ARM", "uARM", "GCC_ARM", "IAR"],
+        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "config": {
             "clock_source": {
                 "help": "Mask value : USE_PLL_HSE_EXTC (need HW patch) | USE_PLL_HSE_XTAL | USE_PLL_HSI",
@@ -230,12 +230,10 @@
     "LPC812": {
         "supported_form_factors": ["ARDUINO"],
         "core": "Cortex-M0+",
-        "default_toolchain": "uARM",
+        "default_toolchain": "ARM",
         "extra_labels": ["NXP", "LPC81X"],
-        "is_disk_virtual": true,
-        "supported_toolchains": ["uARM", "IAR", "GCC_ARM"],
+        "supported_toolchains": ["ARM", "GCC_ARM"],
         "inherits": ["LPCTarget"],
-        "detect_code": ["1050"],
         "device_has": [
             "I2C",
             "I2CSLAVE",
@@ -255,10 +253,10 @@
     "LPC824": {
         "supported_form_factors": ["ARDUINO"],
         "core": "Cortex-M0+",
-        "default_toolchain": "uARM",
+        "default_toolchain": "ARM",
         "extra_labels": ["NXP", "LPC82X"],
         "is_disk_virtual": true,
-        "supported_toolchains": ["uARM", "GCC_ARM", "IAR"],
+        "supported_toolchains": ["ARM", "GCC_ARM"],
         "inherits": ["LPCTarget"],
         "device_has": [
             "ANALOGIN",
