@@ -227,8 +227,7 @@
             "network-default-interface-type": "ETHERNET"
         }
     },
-    "LPC812": {
-        "supported_form_factors": ["ARDUINO"],
+    "NODE_LPC812": {
         "core": "Cortex-M0+",
         "default_toolchain": "ARM",
         "extra_labels": ["NXP", "LPC81X"],
@@ -246,16 +245,20 @@
             "SPISLAVE",
             "USTICKER"
         ],
+        "overrides": {
+            "boot-stack-size": "0x400"
+        },
         "c_lib": "small",
-        "release_versions": ["2"],
+        "release_versions": ["5"],
+        "supported_application_profiles": [
+            "bare-metal"
+        ],
         "device_name": "LPC812M101JDH20"
     },
-    "LPC824": {
-        "supported_form_factors": ["ARDUINO"],
+    "NODE_LPC824": {
         "core": "Cortex-M0+",
         "default_toolchain": "ARM",
         "extra_labels": ["NXP", "LPC82X"],
-        "is_disk_virtual": true,
         "supported_toolchains": ["ARM", "GCC_ARM"],
         "inherits": ["LPCTarget"],
         "device_has": [
@@ -271,7 +274,10 @@
             "USTICKER"
         ],
         "c_lib": "small",
-        "release_versions": ["2"],
+        "release_versions": ["5"],
+        "supported_application_profiles": [
+            "bare-metal"
+        ],
         "device_name": "LPC824M201JDH20"
     }
 }

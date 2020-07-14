@@ -76,15 +76,10 @@ typedef enum {
     A5 = P0_11,
     
     // LPC800-MAX board
-    LED_RED = P0_7,
-    LED_GREEN = P0_17,
-    LED_BLUE = P0_16,
+    LED_RED = P0_11,
     
     // mbed original LED naming
-    LED1 = LED_BLUE,
-    LED2 = LED_GREEN,
-    LED3 = LED_RED,
-    LED4 = LED_RED,
+    LED1 = LED_RED,
     
     // Serial to USB pins
     USBTX = P0_6,
