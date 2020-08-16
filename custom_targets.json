@@ -89,6 +89,33 @@
         "device_name": "STM32F411CEUx",
         "device_has_remove": ["LPTICKER"]
     },
+    "WEACT_F401CC": {
+        "inherits": [
+            "MCU_STM32F4"
+        ],
+        "extra_labels_add": [
+            "STM32F401xC"
+        ],
+        "macros_add": [
+            "STM32F401xC"
+        ],
+        "components_add": ["SPIF"],
+        "overrides": {
+            "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
+        },
+        "config": {
+            "hse_value": {
+                "help": "HSE default value is 25MHz in HAL",
+                "value": "25000000",
+                "macro_name": "HSE_VALUE"
+            }
+        },
+        "device_has_add": [
+            "USBDEVICE"
+        ],
+        "release_versions": ["2", "5"],
+        "device_name": "STM32F401CCUx"
+    },
     "DEVEBOX_F407VG": {
         "inherits": ["MCU_STM32"],
         "core": "Cortex-M4F",
