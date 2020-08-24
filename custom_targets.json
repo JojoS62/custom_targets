@@ -117,35 +117,22 @@
         "device_name": "STM32F401CCUx"
     },
     "DEVEBOX_F407VG": {
-        "inherits": ["MCU_STM32"],
-        "core": "Cortex-M4F",
+        "inherits": ["MCU_STM32F4"],
         "extra_labels_add": [
-            "STM32F4",
             "STM32F407xG"
         ],
         "macros_add": [
             "STM32F407xx"
         ],
         "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
-        "config": {
-            "clock_source": {
-                "help": "Mask value : USE_PLL_HSE_EXTC (need HW patch) | USE_PLL_HSE_XTAL | USE_PLL_HSI",
-                "value": "USE_PLL_HSE_XTAL|USE_PLL_HSI",
-                "macro_name": "CLOCK_SOURCE"
-            }
-        },
-        "device_has_remove": [
-            "SERIAL_FC"
-        ],
         "overrides": {
+            "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
             "lse_available": 0,
             "network-default-interface-type": "ETHERNET"
         },
         "device_has_add": [
             "ANALOGOUT", 
-            "MPU", 
             "TRNG", 
-            "FLASH",
             "EMAC",
             "SDIO",
             "USBDEVICE"
