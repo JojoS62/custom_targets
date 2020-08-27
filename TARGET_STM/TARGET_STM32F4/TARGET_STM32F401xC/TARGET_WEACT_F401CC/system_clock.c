@@ -17,15 +17,15 @@
 /**
   * This file configures the system clock as follows:
   *-----------------------------------------------------------------------------
-  * System clock source | 1- USE_PLL_HSE_EXTC (external 8 MHz clock) | DEVICE_USBDEVICE=1
-  *                     | 2- USE_PLL_HSE_XTAL (external 8 MHz xtal)  |
+  * System clock source | 1- USE_PLL_HSE_EXTC (external 25 MHz clock) |
+  *                     | 2- USE_PLL_HSE_XTAL (external 25 MHz xtal)  |
   *                     | 3- USE_PLL_HSI (internal 16 MHz)           |
   *-----------------------------------------------------------------------------
-  * SYSCLK(MHz)         | 100                                        | 96
-  * AHBCLK (MHz)        | 100                                        | 96
-  * APB1CLK (MHz)       | 50                                         | 48
-  * APB2CLK (MHz)       | 100                                        | 96
-  * USB capable         |  NO                                        | YES
+  * SYSCLK(MHz)         | 84                                         | 
+  * AHBCLK (MHz)        | 84                                         | 
+  * APB1CLK (MHz)       | 42                                         | 
+  * APB2CLK (MHz)       | 84                                         | 
+  * USB capable         | YES                                        | 
   *-----------------------------------------------------------------------------
 **/
 
@@ -110,11 +110,11 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
     RCC_OscInitStruct.PLL.PLLM            = 25;            // VCO input clock = 1 MHz (25 MHz / 25)
 #if (DEVICE_USBDEVICE)
-    RCC_OscInitStruct.PLL.PLLN            = 192;           // VCO output clock = 192 MHz (1 MHz * 192)
+    RCC_OscInitStruct.PLL.PLLN            = 168;           // VCO output clock = 168 MHz (1 MHz * 168)
 #else /* DEVICE_USBDEVICE */
-    RCC_OscInitStruct.PLL.PLLN            = 200;           // VCO output clock = 200 MHz (1 MHz * 200)
+    RCC_OscInitStruct.PLL.PLLN            = 168;           // VCO output clock = 168 MHz (1 MHz * 168)
 #endif /* DEVICE_USBDEVICE */
-    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2; // PLLCLK = 100 MHz or 96 MHz (depending on DEVICE_USBDEVICE)
+    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2; // PLLCLK = 84 MHz or 84 MHz (depending on DEVICE_USBDEVICE)
     RCC_OscInitStruct.PLL.PLLQ            = 4;             // USB clock = 48 MHz (DEVICE_USBDEVICE=1)
     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
         return 0; // FAIL
@@ -122,10 +122,10 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
 
     // Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 clocks dividers
     RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-    RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK; // 96/100 MHz
-    RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;         // 96/100 MHz
-    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;           // 48/50 MHz
-    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;           // 96/100 MHz
+    RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK; // 84 MHz
+    RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;         // 84 MHz
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;           // 42 MHz
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;           // 84 MHz
     if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK) {
         return 0; // FAIL
     }
@@ -162,14 +162,10 @@ uint8_t SetSysClock_PLL_HSI(void)
     RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
     RCC_OscInitStruct.PLL.PLLState        = RCC_PLL_ON;
     RCC_OscInitStruct.PLL.PLLSource       = RCC_PLLSOURCE_HSI;
-    RCC_OscInitStruct.PLL.PLLM            = 8;             // VCO input clock = 2 MHz (16 MHz / 8)
-#if (DEVICE_USBDEVICE)
-    RCC_OscInitStruct.PLL.PLLN            = 192;           // VCO output clock = 384 MHz (2 MHz * 192)
-#else /* DEVICE_USBDEVICE */
-    RCC_OscInitStruct.PLL.PLLN            = 200;           // VCO output clock = 400 MHz (2 MHz * 200)
-#endif /* DEVICE_USBDEVICE */
-    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV4; // PLLCLK = 100 MHz or 96 MHz (depending on DEVICE_USBDEVICE)
-    RCC_OscInitStruct.PLL.PLLQ            = 8;             // USB clock = 48 MHz (DEVICE_USBDEVICE=1)
+    RCC_OscInitStruct.PLL.PLLM            = 8;              // VCO input clock = 2 MHz (16 MHz / 8)
+    RCC_OscInitStruct.PLL.PLLN            = 84;             // VCO output clock = 168 MHz (2 MHz * 84)
+    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2;  // PLLCLK = 84 MHz
+    RCC_OscInitStruct.PLL.PLLQ            = 4;              // USB clock = 48 MHz 
     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
         return 0; // FAIL
     }
