@@ -293,6 +293,35 @@
             "bare-metal"
         ],
         "device_name": "LPC824M201JDH20"
+    },
+    "DEVEBOX_H743ZI": {
+        "inherits": [
+            "MCU_STM32H7"
+        ],
+        "core": "Cortex-M7FD",
+        "extra_labels_add": [
+            "STM32H743xI"
+        ],
+        "config": {
+            "d11_configuration": {
+                "help": "Value: PB_5 for the default board configuration, PA_7 in case of solder bridge update (SB33 on/ SB35 off)",
+                "value": "PB_5",
+                "macro_name": "STM32_D11_SPI_ETHERNET_PIN"
+            }
+        },
+        "overrides": {
+            "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
+            "network-default-interface-type": "ETHERNET"
+        },
+        "macros_add": [
+            "STM32H743xx"
+        ],
+        "device_has_add": [
+            "EMAC",
+            "USBDEVICE"
+        ],
+        "device_has_remove": ["LPTICKER"],
+        "device_name": "STM32H743VITx"
     }
 }
 
