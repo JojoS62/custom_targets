@@ -108,6 +108,10 @@
                 "help": "HSE default value is 25MHz in HAL",
                 "value": "25000000",
                 "macro_name": "HSE_VALUE"
+            },
+            "usb_speed": {
+                "help": "USE_USB_OTG_FS or USE_USB_OTG_HS or USE_USB_HS_IN_FS",
+                "value": "USE_USB_OTG_FS"
             }
         },
         "device_has_add": [
@@ -294,7 +298,7 @@
         ],
         "device_name": "LPC824M201JDH20"
     },
-    "DEVEBOX_H743ZI": {
+    "DEVEBOX_H743VI": {
         "inherits": [
             "MCU_STM32H7"
         ],
@@ -307,6 +311,10 @@
                 "help": "Value: PB_5 for the default board configuration, PA_7 in case of solder bridge update (SB33 on/ SB35 off)",
                 "value": "PB_5",
                 "macro_name": "STM32_D11_SPI_ETHERNET_PIN"
+            },
+            "usb_speed": {
+                "help": "USE_USB_OTG_FS or USE_USB_OTG_HS or USE_USB_HS_IN_FS",
+                "value": "USE_USB_OTG_FS"
             }
         },
         "overrides": {
