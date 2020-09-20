@@ -109,13 +109,9 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
     RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
     RCC_OscInitStruct.PLL.PLLM            = 25;            // VCO input clock = 1 MHz (25 MHz / 25)
-#if (DEVICE_USBDEVICE)
-    RCC_OscInitStruct.PLL.PLLN            = 168;           // VCO output clock = 168 MHz (1 MHz * 168)
-#else /* DEVICE_USBDEVICE */
-    RCC_OscInitStruct.PLL.PLLN            = 168;           // VCO output clock = 168 MHz (1 MHz * 168)
-#endif /* DEVICE_USBDEVICE */
-    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2; // PLLCLK = 84 MHz or 84 MHz (depending on DEVICE_USBDEVICE)
-    RCC_OscInitStruct.PLL.PLLQ            = 4;             // USB clock = 48 MHz (DEVICE_USBDEVICE=1)
+    RCC_OscInitStruct.PLL.PLLN            = 336;           // VCO output clock = 336 MHz (1 MHz * 336)
+    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV4; // PLLCLK = 84 MHz
+    RCC_OscInitStruct.PLL.PLLQ            = 7;             // USB clock = 336 / 7 = 48 MHz
     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
         return 0; // FAIL
     }
