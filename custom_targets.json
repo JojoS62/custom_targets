@@ -55,6 +55,7 @@
             "FLASH",
             "USBDEVICE"
         ],
+        "release_versions": ["2", "5"],
         "device_has_remove": ["STDIO_MESSAGES"]
     },
     "WEACT_F411CE": {
