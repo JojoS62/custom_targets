@@ -37,25 +37,25 @@
         "release_versions": ["2", "5"],
         "device_name": "STM32F407VETx"
     },
-        "BLUEPILL_F103CB": {
-        "inherits": ["MCU_STM32"],
-        "core": "Cortex-M3",
-        "default_toolchain": "GCC_ARM",
-        "extra_labels_add": ["STM32F1", "STM32F103CB"],
-        "config": {
-            "clock_source": {
-                "help": "Mask value : USE_PLL_HSE_EXTC (SYSCLK=72 MHz) | USE_PLL_HSE_XTAL (need HW patch) | USE_PLL_HSI (SYSCLK=64 MHz)",
-                "value": "USE_PLL_HSE_XTAL|USE_PLL_HSI",
-                "macro_name": "CLOCK_SOURCE"
-            }
+    "BLUEPILL_F103CB": {
+        "inherits": [
+            "MCU_STM32F103xB"
+        ],
+        "detect_code": [
+            "0700"
+        ],
+        "device_name": "STM32F103RB",
+        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
+        "overrides": {
+            "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
         },
-        "supported_toolchains": ["GCC_ARM"],
         "device_has_add": [
             "CAN",
             "SERIAL_ASYNCH",
-            "FLASH"
+            "FLASH",
+            "USBDEVICE"
         ],
-        "device_has_remove": ["STDIO_MESSAGES", "LPTICKER"]
+        "device_has_remove": ["STDIO_MESSAGES"]
     },
     "WEACT_F411CE": {
         "inherits": ["MCU_STM32"],
@@ -315,6 +315,11 @@
             "usb_speed": {
                 "help": "USE_USB_OTG_FS or USE_USB_OTG_HS or USE_USB_HS_IN_FS",
                 "value": "USE_USB_OTG_FS"
+            },
+            "hse_value": {
+                "help": "HSE default value is 25MHz in HAL",
+                "value": "25000000",
+                "macro_name": "HSE_VALUE"
             }
         },
         "overrides": {
