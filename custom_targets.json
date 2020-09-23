@@ -41,11 +41,7 @@
         "inherits": [
             "MCU_STM32F103xB"
         ],
-        "detect_code": [
-            "0700"
-        ],
         "device_name": "STM32F103RB",
-        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
         },
@@ -55,7 +51,7 @@
             "FLASH",
             "USBDEVICE"
         ],
-        "release_versions": ["2", "5"],
+        "release_versions": ["5"],
         "device_has_remove": ["STDIO_MESSAGES"]
     },
     "WEACT_F411CE": {
