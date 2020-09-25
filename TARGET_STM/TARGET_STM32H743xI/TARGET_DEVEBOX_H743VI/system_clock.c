@@ -296,14 +296,14 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     // PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOWIDE;
     // PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
 
-      PeriphClkInitStruct.PLL3.PLL3M = 5;                               // 25 MHz / 5 = 5 MHz
-      PeriphClkInitStruct.PLL3.PLL3N = 48;                              // * 48 = 240 MHz
-      PeriphClkInitStruct.PLL3.PLL3P = 5;                               // 240 / 4 = 60 MHz (unused)
-      PeriphClkInitStruct.PLL3.PLL3Q = 5;                               // 240 / 5 = 48 MHz (USB)
-      PeriphClkInitStruct.PLL3.PLL3R = 5;
-      PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_2;
-      PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOWIDE;
-      PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
+    PeriphClkInitStruct.PLL3.PLL3M = 5;                               // 25 MHz / 5 = 5 MHz
+    PeriphClkInitStruct.PLL3.PLL3N = 48;                              // * 48 = 240 MHz
+    PeriphClkInitStruct.PLL3.PLL3P = 5;                               // 240 / 4 = 60 MHz (unused)
+    PeriphClkInitStruct.PLL3.PLL3Q = 5;                               // 240 / 5 = 48 MHz (USB)
+    PeriphClkInitStruct.PLL3.PLL3R = 5;
+    PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_2;
+    PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOWIDE;
+    PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
 
     PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_PLL3;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
