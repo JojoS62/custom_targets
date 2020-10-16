@@ -331,6 +331,8 @@
             "MCU_STM32H7"
         ],
         "core": "Cortex-M7FD",
+        "mbed_ram_start": "0x24000000",
+        "mbed_ram_size": "0x80000",
         "extra_labels_add": [
             "STM32H743xI"
         ],
