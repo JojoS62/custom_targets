@@ -241,12 +241,12 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     HAL_PWREx_ConfigSupply(PWR_LDO_SUPPLY);
     /** Configure the main internal regulator output voltage
      */
-    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE0);
 
     while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
     /** Macro to configure the PLL clock source
      */
-    //__HAL_RCC_PLL_PLLSOURCE_CONFIG(RCC_PLLSOURCE_HSE);
+    __HAL_RCC_PLL_PLLSOURCE_CONFIG(RCC_PLLSOURCE_HSE);
     /** Initializes the RCC Oscillators according to the specified parameters
      * in the RCC_OscInitTypeDef structure.
      */
@@ -255,9 +255,9 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
     RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;          // 25 MHz
     RCC_OscInitStruct.PLL.PLLM = 5;   // 25 / 5 = 5 MHz
-    RCC_OscInitStruct.PLL.PLLN = 160; // 960 MHz
+    RCC_OscInitStruct.PLL.PLLN = 192; // 960 MHz
     RCC_OscInitStruct.PLL.PLLP = 2;   // PLLCLK = SYSCLK = 480 MHz
-    RCC_OscInitStruct.PLL.PLLQ = 80;  // PLL1Q used for FDCAN = 10 MHz
+    RCC_OscInitStruct.PLL.PLLQ = 96;  // PLL1Q used for FDCAN = 10 MHz
     RCC_OscInitStruct.PLL.PLLR = 2;
     RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
     RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
@@ -287,21 +287,12 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     // USB Clock from PLL3
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USB;
 
-    // PeriphClkInitStruct.PLL3.PLL3M = 25;                              // 25 MHz / 25 = 1 MHz
-    // PeriphClkInitStruct.PLL3.PLL3N = 240;                             // * 240 = 240 MHz
-    // PeriphClkInitStruct.PLL3.PLL3P = 2;                               // 240 /  = 120 MHz (unused)
-    // PeriphClkInitStruct.PLL3.PLL3Q = 5;                               // 240 / 5 = 48 MHz (USB)
-    // PeriphClkInitStruct.PLL3.PLL3R = 2;
-    // PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_0;
-    // PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOWIDE;
-    // PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
-
-    PeriphClkInitStruct.PLL3.PLL3M = 5;                               // 25 MHz / 5 = 5 MHz
-    PeriphClkInitStruct.PLL3.PLL3N = 48;                              // * 48 = 240 MHz
-    PeriphClkInitStruct.PLL3.PLL3P = 5;                               // 240 / 4 = 60 MHz (unused)
+    PeriphClkInitStruct.PLL3.PLL3M = 25;                              // 25 MHz / 25 = 1 MHz
+    PeriphClkInitStruct.PLL3.PLL3N = 240;                             // * 240 = 240 MHz
+    PeriphClkInitStruct.PLL3.PLL3P = 2;                               // 240 /  = 120 MHz (unused)
     PeriphClkInitStruct.PLL3.PLL3Q = 5;                               // 240 / 5 = 48 MHz (USB)
-    PeriphClkInitStruct.PLL3.PLL3R = 5;
-    PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_2;
+    PeriphClkInitStruct.PLL3.PLL3R = 2;
+    PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_0;
     PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOWIDE;
     PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
 
@@ -310,7 +301,9 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     {
         return 0; // FAIL
     }
-    HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLL1QCLK, RCC_MCODIV_10);
+    
+    //HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLL1QCLK, RCC_MCODIV_10);
+    //HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_LSE, RCC_MCODIV_1);
 
     /** Enable USB Voltage detector
      */
@@ -347,7 +340,7 @@ uint8_t SetSysClock_PLL_HSI(void)
     RCC_OscInitStruct.PLL.PLLM = 8;
     RCC_OscInitStruct.PLL.PLLN = 120;
     RCC_OscInitStruct.PLL.PLLP = 2;
-    RCC_OscInitStruct.PLL.PLLQ = 2;
+    RCC_OscInitStruct.PLL.PLLQ = 96;
     RCC_OscInitStruct.PLL.PLLR = 2;
     RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
     RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
