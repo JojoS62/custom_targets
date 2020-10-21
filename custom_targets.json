@@ -363,7 +363,6 @@
             "EMAC",
             "USBDEVICE"
         ],
-        "device_has_remove": ["LPTICKER"],
         "device_name": "STM32H743VITx"
     }
 }
