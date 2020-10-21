@@ -83,8 +83,7 @@
             "USBDEVICE"
         ],
         "release_versions": ["2", "5"],
-        "device_name": "STM32F411CEUx",
-        "device_has_remove": ["LPTICKER"]
+        "device_name": "STM32F411CEUx"
     },
     "WEACT_F401CC": {
         "inherits": [
