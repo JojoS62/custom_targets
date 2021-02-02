@@ -173,7 +173,7 @@
         "device_name": "STM32F407VG"
     },
     "IMSMU_F407VG": {
-        "inherits": ["MCU_STM32"],
+        "inherits": ["MCU_STM32F4"],
         "core": "Cortex-M4F",
         "extra_labels_add": [
             "STM32F4",
@@ -184,15 +184,13 @@
         ],
         "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "config": {
-            "clock_source": {
-                "help": "Mask value : USE_PLL_HSE_EXTC (need HW patch) | USE_PLL_HSE_XTAL | USE_PLL_HSI",
-                "value": "USE_PLL_HSE_EXTC|USE_PLL_HSI",
-                "macro_name": "CLOCK_SOURCE"
-            },
             "hse_value": {
                 "value": "25000000",
                 "macro_name": "HSE_VALUE"
             }
+        },
+        "overrides": {
+            "clock_source": "USE_PLL_HSE_EXTC|USE_PLL_HSI"
         },
         "device_has_remove": [
             "SERIAL_FC"
@@ -349,6 +347,11 @@
                 "help": "HSE default value is 25MHz in HAL",
                 "value": "25000000",
                 "macro_name": "HSE_VALUE"
+            },
+            "lse_drive_load_level": {
+                "help": "HSE drive load level",
+                "value": "RCC_LSEDRIVE_LOW",
+                "macro_name": "TARGET_LSE_DRIVE_LOAD_LEVEL"
             }
         },
         "overrides": {
