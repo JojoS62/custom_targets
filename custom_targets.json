@@ -35,7 +35,7 @@
         "inherits": [
             "MCU_STM32F103xB"
         ],
-        "device_name": "STM32F103RB",
+        "device_name": "STM32F103CB",
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
         },
