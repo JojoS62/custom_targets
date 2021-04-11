@@ -45,8 +45,7 @@
             "FLASH",
             "USBDEVICE"
         ],
-        "release_versions": ["2", "5"],
-        "device_has_remove": ["STDIO_MESSAGES"]
+        "release_versions": ["2", "5"]
     },
     "WEACT_F411CE": {
         "inherits": ["MCU_STM32F4"],
