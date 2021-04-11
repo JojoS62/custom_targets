@@ -93,8 +93,8 @@ typedef enum {
     LED1 = LED_RED,
     
     // Serial to USB pins
-    USBTX = P0_7,
-    USBRX = P0_18,
+    CONSOLE_TX = P0_7,
+    CONSOLE_RX = P0_18,
     
     // I2C pins
     SCL = P0_10,

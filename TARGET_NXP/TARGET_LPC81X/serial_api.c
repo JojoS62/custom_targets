@@ -21,6 +21,7 @@
 #include "serial_api.h"
 #include "cmsis.h"
 #include "pinmap.h"
+#include "PinNameAliases.h"
 #include "mbed_error.h"
 
 /******************************************************************************
