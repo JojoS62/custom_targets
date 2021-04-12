@@ -222,8 +222,8 @@ typedef enum {
     BUTTON2     = PE_3,
     SERIAL_TX   = STDIO_UART_TX, /* USART2 */
     SERIAL_RX   = STDIO_UART_RX,
-    USBTX       = STDIO_UART_TX, /* USART2 */
-    USBRX       = STDIO_UART_RX,
+    CONSOLE_TX  = STDIO_UART_TX,
+    CONSOLE_RX  = STDIO_UART_RX,
     I2C_SCL     = PB_8,	/* I2C1 */
     I2C_SDA     = PB_9,
     SPI_MOSI    = PA_7,
