@@ -87,14 +87,22 @@ typedef enum {
     A5 = P0_20,
     
     // LPC824-MAX board
-    LED_RED = P0_1,
+    LED_RED = P0_14,
     
     // mbed original LED naming
     LED1 = LED_RED,
     
-    // Serial to USB pins
-    CONSOLE_TX = P0_7,
-    CONSOLE_RX = P0_18,
+    // STDIO for console print
+#ifdef MBED_CONF_TARGET_STDIO_UART_TX
+    CONSOLE_TX = MBED_CONF_TARGET_STDIO_UART_TX,
+#else
+    CONSOLE_TX = P0_0,
+#endif
+#ifdef MBED_CONF_TARGET_STDIO_UART_RX
+    CONSOLE_RX = MBED_CONF_TARGET_STDIO_UART_RX,
+#else
+    CONSOLE_RX = P0_1,
+#endif
     
     // I2C pins
     SCL = P0_10,
