@@ -283,8 +283,8 @@ typedef enum {
 
     SERIAL_TX   = STDIO_UART_TX, // Virtual Com Port
     SERIAL_RX   = STDIO_UART_RX, // Virtual Com Port
-    USBTX       = STDIO_UART_TX, // Virtual Com Port
-    USBRX       = STDIO_UART_RX, // Virtual Com Port
+    CONSOLE_TX  = STDIO_UART_TX,
+    CONSOLE_RX  = STDIO_UART_RX,
     I2C_SCL     = D15,
     I2C_SDA     = D14,
     SPI_MOSI    = D11,
