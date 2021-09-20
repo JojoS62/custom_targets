@@ -334,16 +334,13 @@
                 "help": "HSE default value is 25MHz in HAL",
                 "value": "25000000",
                 "macro_name": "HSE_VALUE"
-            },
-            "lse_drive_load_level": {
-                "help": "HSE drive load level",
-                "value": "RCC_LSEDRIVE_LOW",
-                "macro_name": "TARGET_LSE_DRIVE_LOAD_LEVEL"
             }
         },
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
-            "network-default-interface-type": "ETHERNET"
+            "network-default-interface-type": "ETHERNET",
+            "lse_drive_load_level": "RCC_LSEDRIVE_LOW",
+            "system_power_supply": "PWR_LDO_SUPPLY"
         },
         "macros_add": [
             "STM32H743xx"
