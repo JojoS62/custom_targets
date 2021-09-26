@@ -1,17 +1,15 @@
 {
     "STM32F407VE_BLACK": {
         "inherits": ["MCU_STM32F4"],
-        "core": "Cortex-M4F",
         "extra_labels_add": [
-            "STM32F4",
             "STM32F407xE"
         ],
         "macros_add": [
             "STM32F407xx"
         ],
-        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "device_has_remove": [
-            "SERIAL_FC"
+            "SERIAL_FC",
+            "LPTICKER"
         ],
         "overrides": {
             "lse_available": 0,
