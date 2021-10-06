@@ -8,8 +8,7 @@
             "STM32F407xx"
         ],
         "device_has_remove": [
-            "SERIAL_FC",
-            "LPTICKER"
+            "SERIAL_FC"
         ],
         "overrides": {
             "lse_available": 0,
