@@ -309,11 +309,8 @@
     },
     "DEVEBOX_H743VI": {
         "inherits": [
-            "MCU_STM32H7"
+            "MCU_STM32H743xI"
         ],
-        "core": "Cortex-M7FD",
-        "mbed_ram_start": "0x24000000",
-        "mbed_ram_size": "0x80000",
         "extra_labels_add": [
             "STM32H743xI"
         ],
@@ -336,8 +333,7 @@
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
             "network-default-interface-type": "ETHERNET",
-            "lse_drive_load_level": "RCC_LSEDRIVE_LOW",
-            "system_power_supply": "PWR_LDO_SUPPLY"
+            "lse_drive_load_level": "RCC_LSEDRIVE_LOW"
         },
         "macros_add": [
             "STM32H743xx"
