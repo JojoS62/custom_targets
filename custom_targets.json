@@ -45,15 +45,7 @@
         "release_versions": ["2", "5"]
     },
     "WEACT_F411CE": {
-        "inherits": ["MCU_STM32F4"],
-        "core": "Cortex-M4F",
-        "macros_add": [
-            "STM32F411xE"
-        ],
-        "extra_labels_add": [
-            "STM32F4",
-            "STM32F411xE"
-        ],
+        "inherits": ["MCU_STM32F411xE"],
         "components_add": ["FLASHIAP", "SPIF"],
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
@@ -178,15 +170,13 @@
             }
         },
         "overrides": {
-            "clock_source": "USE_PLL_HSE_EXTC|USE_PLL_HSI"
+            "clock_source": "USE_PLL_HSE_EXTC|USE_PLL_HSI",
+            "lse_available": 0,
+            "network-default-interface-type": "ETHERNET"
         },
         "device_has_remove": [
             "SERIAL_FC"
         ],
-        "overrides": {
-            "lse_available": 0,
-            "network-default-interface-type": "ETHERNET"
-        },
         "device_has_add": [
             "ANALOGOUT", 
             "MPU", 
