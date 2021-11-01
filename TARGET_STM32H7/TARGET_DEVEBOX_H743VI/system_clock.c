@@ -286,13 +286,11 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
 
     // USB Clock from PLL3
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USB |
-                                               RCC_PERIPHCLK_SPI1 | 
-                                               RCC_PERIPHCLK_SPI2 | 
-                                               RCC_PERIPHCLK_SPI3;
+                                               RCC_PERIPHCLK_SPI123;
 
     PeriphClkInitStruct.PLL3.PLL3M = 25;                              // 25 MHz / 25 = 1 MHz
     PeriphClkInitStruct.PLL3.PLL3N = 240;                             // * 240 = 240 MHz
-    PeriphClkInitStruct.PLL3.PLL3P = 2;                               // 240 /  = 120 MHz (SPI 1/2/3)
+    PeriphClkInitStruct.PLL3.PLL3P = 2;                               // 240 / 2 = 120 MHz (SPI 1/2/3)
     PeriphClkInitStruct.PLL3.PLL3Q = 5;                               // 240 / 5 = 48 MHz (USB)
     PeriphClkInitStruct.PLL3.PLL3R = 2;
     PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_0;
