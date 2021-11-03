@@ -254,10 +254,10 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
     RCC_OscInitStruct.HSEState = RCC_HSE_ON;
     RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
     RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;          // 25 MHz
-    RCC_OscInitStruct.PLL.PLLM = 5;   // 25 / 5 = 5 MHz
-    RCC_OscInitStruct.PLL.PLLN = 192; // 960 MHz
-    RCC_OscInitStruct.PLL.PLLP = 2;   // PLLCLK = SYSCLK = 480 MHz
-    RCC_OscInitStruct.PLL.PLLQ = 96;  // PLL1Q used for FDCAN = 10 MHz
+    RCC_OscInitStruct.PLL.PLLM = 5;     // 25 / 5 = 5 MHz
+    RCC_OscInitStruct.PLL.PLLN = 192;   // 960 MHz
+    RCC_OscInitStruct.PLL.PLLP = 2;     // PLLCLK = SYSCLK = 480 MHz
+    RCC_OscInitStruct.PLL.PLLQ = 8;     // 120 MHz SPI123;   96;  // PLL1Q used for FDCAN = 10 MHz
     RCC_OscInitStruct.PLL.PLLR = 2;
     RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
     RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
