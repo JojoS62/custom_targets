@@ -53,6 +53,7 @@ uint8_t SetSysClock_PLL_HSE(uint8_t bypass);
 
 uint8_t SetSysClock_PLL_HSI(void);
 
+#if 0
 /**
   * @brief  Setup the microcontroller system
   *         Initialize the FPU setting, vector table location and External memory
@@ -97,6 +98,8 @@ void SystemInit(void)
 #endif
 
 }
+#endif
+
 
 /**
   * @brief  Configures the System clock source, PLL Multiplier and Divider factors,

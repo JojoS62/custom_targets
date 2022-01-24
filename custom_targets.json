@@ -11,7 +11,6 @@
             "SERIAL_FC"
         ],
         "overrides": {
-            "lse_available": 0,
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
             "network-default-interface-type": "ETHERNET"
         },
@@ -45,15 +44,7 @@
         "release_versions": ["2", "5"]
     },
     "WEACT_F411CE": {
-        "inherits": ["MCU_STM32F4"],
-        "core": "Cortex-M4F",
-        "macros_add": [
-            "STM32F411xE"
-        ],
-        "extra_labels_add": [
-            "STM32F4",
-            "STM32F411xE"
-        ],
+        "inherits": ["MCU_STM32F411xE"],
         "components_add": ["FLASHIAP", "SPIF"],
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
@@ -146,7 +137,6 @@
         "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
-            "lse_available": 0,
             "network-default-interface-type": "ETHERNET"
         },
         "device_has_add": [
@@ -177,14 +167,14 @@
                 "macro_name": "HSE_VALUE"
             }
         },
-        "device_has_remove": [
-            "SERIAL_FC"
-        ],
         "overrides": {
             "clock_source": "USE_PLL_HSE_EXTC|USE_PLL_HSI",
             "lse_available": 0,
             "network-default-interface-type": "ETHERNET"
         },
+        "device_has_remove": [
+            "SERIAL_FC"
+        ],
         "device_has_add": [
             "ANALOGOUT", 
             "MPU", 
@@ -308,11 +298,8 @@
     },
     "DEVEBOX_H743VI": {
         "inherits": [
-            "MCU_STM32H7"
+            "MCU_STM32H743xI"
         ],
-        "core": "Cortex-M7FD",
-        "mbed_ram_start": "0x24000000",
-        "mbed_ram_size": "0x80000",
         "extra_labels_add": [
             "STM32H743xI"
         ],
@@ -335,8 +322,7 @@
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
             "network-default-interface-type": "ETHERNET",
-            "lse_drive_load_level": "RCC_LSEDRIVE_LOW",
-            "system_power_supply": "PWR_LDO_SUPPLY"
+            "lse_drive_load_level": "RCC_LSEDRIVE_LOW"
         },
         "macros_add": [
             "STM32H743xx"
