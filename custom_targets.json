@@ -177,13 +177,11 @@
                 "macro_name": "HSE_VALUE"
             }
         },
-        "overrides": {
-            "clock_source": "USE_PLL_HSE_EXTC|USE_PLL_HSI"
-        },
         "device_has_remove": [
             "SERIAL_FC"
         ],
         "overrides": {
+            "clock_source": "USE_PLL_HSE_EXTC|USE_PLL_HSI",
             "lse_available": 0,
             "network-default-interface-type": "ETHERNET"
         },
@@ -305,6 +303,7 @@
         "supported_application_profiles": [
             "bare-metal"
         ],
+        "macros_add": ["CORE_M0PLUS"],
         "device_name": "LPC824M201JDH20"
     },
     "DEVEBOX_H743VI": {
