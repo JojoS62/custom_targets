@@ -321,7 +321,7 @@
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
             "network-default-interface-type": "ETHERNET",
-            "lse_drive_load_level": "RCC_LSEDRIVE_LOW"
+            "lse_drive_load_level": "RCC_LSEDRIVE_MEDIUMHIGH"
         },
         "macros_add": [
             "STM32H743xx"
