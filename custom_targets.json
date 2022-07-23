@@ -293,6 +293,7 @@
         "supported_application_profiles": [
             "bare-metal"
         ],
+        "macros_add": ["CORE_M0PLUS"],
         "device_name": "LPC824M201JDH20"
     },
     "DEVEBOX_H743VI": {
