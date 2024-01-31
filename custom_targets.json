@@ -332,6 +332,34 @@
             "USBDEVICE"
         ],
         "device_name": "STM32H743VITx"
+    },
+    "JZ_F407VE": {
+        "inherits": ["MCU_STM32F4"],
+        "extra_labels_add": [
+            "STM32F407xE"
+        ],
+        "macros_add": [
+            "STM32F407xx"
+        ],
+        "device_has_remove": [
+            "SERIAL_FC"
+        ],
+        "overrides": {
+            "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
+            "network-default-interface-type": "ETHERNET"
+        },
+        "device_has_add": [
+            "ANALOGOUT", 
+            "MPU", 
+            "TRNG", 
+            "FLASH",
+            "EMAC",
+            "SDIO",
+            "USBDEVICE"
+        ],
+        "components_add": ["SDIO", "SPIF"],
+        "release_versions": ["2", "5"],
+        "device_name": "STM32F407VETx"
     }
-}
+ }
 
