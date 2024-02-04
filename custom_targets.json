@@ -348,6 +348,13 @@
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
             "network-default-interface-type": "ETHERNET"
         },
+        "config": {
+            "hse_value": {
+                "help": "HSE default value is 25MHz in HAL",
+                "value": "25000000",
+                "macro_name": "HSE_VALUE"
+            }
+        },
         "device_has_add": [
             "ANALOGOUT", 
             "MPU", 

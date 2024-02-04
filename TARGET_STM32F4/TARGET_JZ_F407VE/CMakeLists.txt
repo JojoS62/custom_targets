@@ -5,6 +5,7 @@ target_sources(mbed-jz-f407ve
         PeripheralPins.c
         stm32f4_eth_conf.c
         stm32f4_eth_init.c
+        system_clock.c
 )
 
 target_include_directories(mbed-jz-f407ve
