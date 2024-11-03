@@ -1,1 +1,3 @@
 add_subdirectory(TARGET_DEVEBOX_H743VI)
+add_subdirectory(TARGET_FK743M2_IIT6)
+add_subdirectory(TARGET_FK743M5_XIH6)
