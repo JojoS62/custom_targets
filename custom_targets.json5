@@ -347,13 +347,8 @@
         },
         "overrides": {
             "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI"
-        },
-        "macros_add": [
-            "MBED_CONF_TARGET_STDIO_UART_TX=PA_9",
-            "MBED_CONF_TARGET_STDIO_UART_RX=PA_10"
-        ]
-
-    }    ,
+        }
+    },
     "FK743M5_XIH6" : {
         "inherits": [
             "MCU_STM32H743xI"
