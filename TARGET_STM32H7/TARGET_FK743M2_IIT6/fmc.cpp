@@ -18,6 +18,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "fmc.h"
+#include "mbed_error.h"
 
 SDRAM_HandleTypeDef hsdram1;
 
