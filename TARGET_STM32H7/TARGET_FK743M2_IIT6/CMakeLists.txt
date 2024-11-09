@@ -6,6 +6,7 @@ add_library(mbed-fk743m2-iit6 INTERFACE)
 target_sources(mbed-fk743m2-iit6
     INTERFACE
         PeripheralPins.c
+        fmc.cpp
 )
 
 target_include_directories(mbed-fk743m2-iit6
