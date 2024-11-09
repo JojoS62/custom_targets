@@ -80,6 +80,12 @@ static void HAL_FMC_MspInit(void) {
     /* Peripheral clock enable */
     __HAL_RCC_FMC_CLK_ENABLE();
 
+    __HAL_RCC_GPIOD_CLK_ENABLE();
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+    __HAL_RCC_GPIOG_CLK_ENABLE();
+    __HAL_RCC_GPIOH_CLK_ENABLE();
+
     /** FMC GPIO Configuration
     PF0   ------> FMC_A0
     PF1   ------> FMC_A1
