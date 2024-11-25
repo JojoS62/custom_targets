@@ -191,7 +191,7 @@ static void HAL_FMC_MspInit(void) {
 
     HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
 
-    printf("FMC_Initialized\n");
+    // printf("FMC_Initialized\n");
 }
 
 void HAL_SDRAM_MspInit(SDRAM_HandleTypeDef* sdramHandle) {
