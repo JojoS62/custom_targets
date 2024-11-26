@@ -347,8 +347,7 @@
         "device_has_add": [
             "EMAC",
             "USBDEVICE"
-        ],
-        "macros_remove": ["MBED_SPLIT_HEAP"]
+        ]
     },
     "FK743M5_XIH6" : {
         "inherits": [
@@ -364,8 +363,7 @@
         "device_has_add": [
             "EMAC",
             "USBDEVICE"
-        ],
-        "macros_remove": ["MBED_SPLIT_HEAP"]
+        ]
     }
 }
 
