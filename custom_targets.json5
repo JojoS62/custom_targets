@@ -364,6 +364,41 @@
             "EMAC",
             "USBDEVICE"
         ]
+    },
+    "JZ_F407VE": {
+        "inherits": ["MCU_STM32F4"],
+        "extra_labels_add": [
+            "STM32F407xE"
+        ],
+        "macros_add": [
+            "STM32F407xx"
+        ],
+        "device_has_remove": [
+            "SERIAL_FC"
+        ],
+        "overrides": {
+            "clock_source": "USE_PLL_HSE_XTAL | USE_PLL_HSI",
+            "network-default-interface-type": "ETHERNET"
+        },
+        "config": {
+            "hse_value": {
+                "help": "HSE default value is 25MHz in HAL",
+                "value": "25000000",
+                "macro_name": "HSE_VALUE"
+            }
+        },
+        "device_has_add": [
+            "ANALOGOUT", 
+            "MPU", 
+            "TRNG", 
+            "FLASH",
+            "EMAC",
+            "SDIO",
+            "USBDEVICE"
+        ],
+        "components_add": ["SDIO", "SPIF"],
+        "release_versions": ["2", "5"],
+        "device_name": "STM32F407VETx"
     }
-}
+ }
 
